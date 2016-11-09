@@ -1,4 +1,4 @@
-# My simple Time Tracker using Laravel (5.3) and AngularJS (1.5.8)
+# My Time Tracker using Laravel (5.3) and AngularJS (1.5.8)
 ![Sandbox](/resources/images/sandbox-banner.jpg)
 
 This is just a simple project where I play around with a RESTful API comprised of both Laravel and AngularJS.
@@ -12,11 +12,13 @@ For this purpose an equally simple relational-schema is used to demonstrate this
 ## Setting up the environment:
 * Most of the configurations I have done here are listed on my first [sandbox application](https://github.com/CouchCat/laravel-crud-sandbox)
 * NPM dependencies used here:
-    * **npm install angular@1.5.8 moment angular-ui-bootstrap angular-resource --save**
+    * **npm install angular@1.5.8 moment angular-ui-bootstrap angular-resource angular-animate angular-sanitize --save**
 
 ## Notes:
 * When creating relationships it is advisable to add integrity to both the database through [migrations](https://laravel.com/docs/5.3/migrations) and the model through [Eloquent](https://laravel.com/docs/5.3/eloquent-relationships).
-
+* Heroku config key: base64:T4EGVv1aGXeeGHvukWXraT4374CsrGdgLBn7mCM90wA=
+* Heroku Database name:  postgresql-fitted-10358
+* Heroku app URL: warm-springs-63074
 
 ***
 

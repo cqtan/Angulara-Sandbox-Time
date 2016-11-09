@@ -26,7 +26,9 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    //'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => 'pgsql',
+
 
     /*
     |--------------------------------------------------------------------------
@@ -66,6 +68,7 @@ return [
             'engine' => null,
         ],
 
+        /*
         'pgsql' => [
             'driver' => 'pgsql',
             'host' => env('DB_HOST', 'localhost'),
@@ -77,6 +80,20 @@ return [
             'prefix' => '',
             'schema' => 'public',
             'sslmode' => 'prefer',
+        ],
+        */
+
+        'pgsql' => [
+          'driver'   => 'pgsql',
+          'host'     => parse_url(getenv("DATABASE_URL"))["host"],
+          'port'     => env('DB_PORT', '5432'),
+          'database' => substr(parse_url(getenv("DATABASE_URL"))["path"], 1),
+          'username' => parse_url(getenv("DATABASE_URL"))["user"],
+          'password' => parse_url(getenv("DATABASE_URL"))["pass"],
+          'charset'  => 'utf8',
+          'prefix'   => '',
+          'schema'   => 'public',
+          'sslmode' => 'prefer',
         ],
 
     ],

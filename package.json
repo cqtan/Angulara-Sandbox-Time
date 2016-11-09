@@ -17,7 +17,9 @@
   },
   "dependencies": {
     "angular": "^1.5.8",
+    "angular-animate": "^1.5.8",
     "angular-resource": "^1.5.8",
+    "angular-sanitize": "^1.5.8",
     "angular-ui-bootstrap": "^2.2.0",
     "moment": "^2.15.2"
   }
