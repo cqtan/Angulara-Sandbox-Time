@@ -7,12 +7,36 @@ for an activity while also being able to see and comment other user's activities
 
 For this purpose an equally simple relational-schema is used to demonstrate this application:
 
-![ERM Comment Time](/resources/images/ERM_Comment_Time.png)
+![ERM Comment Time](/resources/images/ERM_Comment_Time.jpg)
+
+A preview of current state of the app can be seen [here](https://warm-springs-63074.herokuapp.com/)
 
 ## Setting up the environment:
 * Most of the configurations I have done here are listed on my first [sandbox application](https://github.com/CouchCat/laravel-crud-sandbox)
 * NPM dependencies used here:
     * **npm install angular@1.5.8 moment angular-ui-bootstrap angular-resource angular-animate angular-sanitize --save**
+* Add node module dependencies to **"resources/assets/app.js"** by requiring them:
+```
+  ...
+  require('./bootstrap');
+  require('angular');
+  require('angular-ui-bootstrap')
+  require('angular-resource');
+  require('angular-animate');
+  require('angular-sanitize');
+  require('moment');
+  ...
+```
+
+# Workflow:
+
+* Set up the project environment as mentioned above
+* Prepare the database with migration files, models and seeds
+* Make a test page just to test the installed dependencies
+* Configure Heroku and deploy to it to test database compatibility
+* Make a homepage to prototype the layout and apply the dependencies on it
+* Implement the first part of the RESTful Api in which some seed data are shown
+* Make sure it also works in Heroku again 
 
 ## Notes:
 * When creating relationships it is advisable to add integrity to both the database through [migrations](https://laravel.com/docs/5.3/migrations) and the model through [Eloquent](https://laravel.com/docs/5.3/eloquent-relationships).

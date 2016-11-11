@@ -11,6 +11,18 @@
 |
 */
 
+
 Route::get('/', function () {
-    return view('test');
+    return view('home');
 });
+
+Auth::routes();
+
+// A route group allows us to have a prefix, in this case api
+Route::group(array('prefix' => 'api'), function()
+{
+    Route::resource('time', 'TimeEntriesController');
+    Route::resource('users', 'UsersController');
+});
+
+Route::get('/home', 'HomeController@index');

@@ -15,5 +15,12 @@ require('laravel-elixir-vue-2');
 
 elixir(mix => {
     mix.sass('app.scss')
-       .webpack('app.js');
+       .webpack('app.js')
+       .scripts([
+         'scripts/angular.js',
+         'scripts/controllers/timeCtrl.js',
+         'scripts/services/time.js',
+       ], 'public/js/all.js')
+       .copy('node_modules/bootstrap-sass/assets/fonts/bootstrap/',
+             'public/fonts/bootstrap');
 });
