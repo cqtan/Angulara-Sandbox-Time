@@ -12,9 +12,10 @@
 
   'use strict';
 
-  angular.module('timeTracker').controller('TimeEntryCtrl', TimeEntry);
+  angular.module('timeTracker').controller('TimeEntryCtrl', TimeEntry)
+         .$inject=['$scope', '$resource'];
 
-  function TimeEntry(time, $scope) {
+  function TimeEntry($scope, time) {
 
     // vm is our capture variable
     // var vm = this;
@@ -63,7 +64,7 @@
 
   'use strict';
 
-  angular.module('timeTracker').service('time', function($resource) {
+  angular.module('timeTracker').service('time', ['$resource', function($resource) {
 
     // ngResource call to our static data
     //var Time = $resource('data/time.json');
@@ -90,7 +91,8 @@
         console.log(error);
       });
     }
-  });
+    
+  }]);
 })();
 
 //# sourceMappingURL=all.js.map

@@ -2,9 +2,10 @@
 
   'use strict';
 
-  angular.module('timeTracker').controller('TimeEntryCtrl', TimeEntry);
+  angular.module('timeTracker').controller('TimeEntryCtrl', TimeEntry)
+         .$inject=['$scope', '$resource'];
 
-  function TimeEntry(time, $scope) {
+  function TimeEntry($scope, time) {
 
     // vm is our capture variable
     // var vm = this;
