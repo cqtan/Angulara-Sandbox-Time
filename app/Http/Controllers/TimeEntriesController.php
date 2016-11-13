@@ -16,7 +16,6 @@ class TimeEntriesController extends Controller
     public function index()
     {
       $time = TimeEntry::with('user')->get();
-
       return $time;
     }
 
@@ -27,7 +26,7 @@ class TimeEntriesController extends Controller
      */
     public function create()
     {
-        //
+        // assigned to Angular
     }
 
     /**
@@ -38,7 +37,10 @@ class TimeEntriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $data = $request->all();
+      $timeentry = new TimeEntry();
+      $timeentry->fill($data);
+      $timeentry->save();
     }
 
     /**
@@ -49,7 +51,7 @@ class TimeEntriesController extends Controller
      */
     public function show($id)
     {
-        //
+        // assigned to Angular
     }
 
     /**
@@ -60,7 +62,7 @@ class TimeEntriesController extends Controller
      */
     public function edit($id)
     {
-        //
+        // assigned to Angular
     }
 
     /**

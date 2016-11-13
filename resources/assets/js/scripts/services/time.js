@@ -29,6 +29,22 @@
         console.log(error);
       });
     }
-    
+
+    this.saveTime = function(data) {
+      // Format the date-time so that MySQL can use it.
+      // Because moment's timepicker includes "T" and "Z"
+      var start = moment(data.start_time).format("YYYY-MM-DD HH:mm:ss");
+      data.start_time = start;
+      var end = moment(data.end_time).format("YYYY-MM-DD HH:mm:ss");
+      data.end_time = end;
+
+      // do a POST request with data. Handled by Laravel "TimeEntriesController"
+      return Time.save(data).$promise.then(function(success) {
+        console.log(success);
+      }, function(error) {
+        console.log(error);
+      });
+    }
+
   }]);
 })();

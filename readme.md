@@ -36,7 +36,9 @@ A preview of current state of the app can be seen [here](https://warm-springs-63
 * Configure Heroku and deploy to it to test database compatibility
 * Make a homepage to prototype the layout and apply the dependencies on it
 * Implement the first part of the RESTful Api in which some seed data are shown
-* Make sure it also works in Heroku again 
+* Make sure it also works in Heroku again
+* Don't forget to also seed to the database in Heroku!
+    * **heroku run php artisan db:seed**
 
 ## Notes:
 * When creating relationships it is advisable to add integrity to both the database through [migrations](https://laravel.com/docs/5.3/migrations) and the model through [Eloquent](https://laravel.com/docs/5.3/eloquent-relationships).

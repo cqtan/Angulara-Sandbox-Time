@@ -20,6 +20,7 @@ elixir(mix => {
          'scripts/angular.js',
          'scripts/controllers/timeCtrl.js',
          'scripts/services/time.js',
+         'scripts/services/user.js',
        ], 'public/js/all.js')
        .copy('node_modules/bootstrap-sass/assets/fonts/bootstrap/',
              'public/fonts/bootstrap');

@@ -26,8 +26,8 @@ return [
     |
     */
 
-    //'default' => env('DB_CONNECTION', 'mysql'),
-    'default' => 'pgsql',
+    'default' => env('DB_CONNECTION', 'mysql'),
+    //'default' => 'pgsql',
 
 
     /*
@@ -68,7 +68,7 @@ return [
             'engine' => null,
         ],
 
-        /*
+
         // Uncomment for local development and comment the 'pgsql'-block below.
         'pgsql' => [
             'driver' => 'pgsql',
@@ -83,9 +83,9 @@ return [
             'sslmode' => 'prefer',
         ],
 
-        */
 
 
+        /*
         // Uncomment for Heroku and comment the 'pgsql'-block above.
         'pgsql' => [
           'driver'   => 'pgsql',
@@ -99,6 +99,7 @@ return [
           'schema'   => 'public',
           'sslmode' => 'prefer',
         ],
+        */
 
 
     ],

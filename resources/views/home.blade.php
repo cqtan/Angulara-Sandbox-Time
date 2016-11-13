@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" ng-controller="TimeEntryCtrl">
+<div class="container">
 
   <!-- Row -->
   <div class="row">
@@ -13,22 +13,22 @@
           <div class="my_timepickers">
             <div class="timepicker col-md-4">
               <span class="timepicker-title label label-primary">Clock In</span>
-              <div uib-timepicker ng-model="vm.clockIn" hour-step="1" minute-step="1" show-meridian="true"></div>
+              <div uib-timepicker ng-model="clockIn" hour-step="1" minute-step="1" show-meridian="true"></div>
             </div>
             <div class="timepicker col-md-4">
               <span class="timepicker-title label label-primary">Clock Out</span>
-              <div uib-timepicker ng-model="vm.clockOut" hour-step="1" minute-step="1" show-meridian="true"></div>
+              <div uib-timepicker ng-model="clockOut" hour-step="1" minute-step="1" show-meridian="true"></div>
             </div>
           </div>
           <div class="time-entry-comment">
             <form>
               <div class="form-group">
                 <label for="title">Title:</label>
-                <input type="text" class="form-control" id="title" placeholder="Name of your activity">
+                <input type="text" class="form-control" id="title" ng-model="title" placeholder="Name of your activity">
               </div>
               <div class="form-group">
                 <label for="description">Description:</label>
-                <textarea class="form-control" ng-model="vm.comment" rows="5" id="description" placeholder="Enter a description for your activity"></textarea>
+                <textarea class="form-control" ng-model="description" rows="5" id="description" placeholder="Enter a description for your activity"></textarea>
               </div>
               <button class="btn btn-primary" ng-click="vm.logNewTime()">Log Time</button>
             </form>
@@ -55,7 +55,7 @@
     <div class="row" ng-repeat="time in timeentries">
       <div class="col-md-8">
         <div class="panel panel-default">
-          <div class="panel-heading"><% time.title %></div>
+          <div class="panel-heading"><% time.title %> | by <% time.user.name %></div>
           <div class="panel-body">
             <p>Start time: <% time.startTime %></p>
             <p>Start time: <% time.endTime %></p>
@@ -68,4 +68,5 @@
     <!-- END Row-->
 
 </div>
+
 @endsection

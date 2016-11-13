@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="timeTracker">
-  @include('includes.header')
-  <body>
+<html ng-app="timeTracker">
+  @include('includes.head')
+  <body ng-controller="TimeEntryCtrl">
     <div id="app">
       @include('includes.nav')
       @yield('content')
